@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Image\free-icon-lock-8472244.png" />
+    <None Remove="Image\free-icon-user-login-12125301.png" />
+    <None Remove="Image\pngwing.com %283%29.png" />
+    <None Remove="Image\pngwing.com %284%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image\free-icon-lock-8472244.png" />
+    <Resource Include="Image\free-icon-user-login-12125301.png" />
+    <Resource Include="Image\pngwing.com (3).png" />
+    <Resource Include="Image\pngwing.com (4).png" />
+  </ItemGroup>
+
+</Project>
