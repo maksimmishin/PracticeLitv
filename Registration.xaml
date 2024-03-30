@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Registration" Height="500" Width="800" Closing="Window_Closing" Background="Bisque">
+        Title="Registration" Height="530" Width="800" Closing="Window_Closing" Background="Bisque">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -23,23 +23,25 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="50"/>
-            <RowDefinition/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1" Text="Регистрация" TextAlignment="Center" FontSize="50" VerticalAlignment="Top"/>
         <TextBlock Text="Введите свой e-mail" Grid.Column="1" Grid.Row="2" FontSize="20" TextAlignment="Center" VerticalAlignment="Bottom"/>
-        <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Height="45"/>
+        <TextBox x:Name="MailBox" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Height="45"/>
         <Image Source="/Image/pngwing.com (4).png" Grid.Row="3" HorizontalAlignment="Right"/>
         <TextBlock Text="Введите новый логин" Grid.Column="1" Grid.Row="4" TextAlignment="Center" FontSize="20" VerticalAlignment="Bottom"/>
-        <TextBox Grid.Row="5" Grid.Column="1" VerticalAlignment="top" Height="45"/>
+        <TextBox x:Name="LoginBox" Grid.Row="5" Grid.Column="1" VerticalAlignment="top" Height="45"/>
         <Image Source="/Image/free-icon-user-login-12125301.png" Grid.Row="5" HorizontalAlignment="Right"/>
         <TextBlock Text="Введите новый пароль" Grid.Column="1" Grid.Row="6" FontSize="20" TextAlignment="Center" VerticalAlignment="Bottom"/>
-        <TextBox Grid.Row="9" Grid.Column="1" VerticalAlignment="Top" Height="45"/>
+        <TextBox x:Name="PassBox" Grid.Row="7" Grid.Column="1" VerticalAlignment="Top" Height="45"/>
         <Image Source="/Image/free-icon-lock-8472244.png" Grid.Row="7" HorizontalAlignment="Right"/>
         <Image Source="/Image/pngwing.com (3).png" Grid.Row="9" Grid.Column="3" HorizontalAlignment="Left" />
         <TextBlock Text="Повторите новый пароль" Grid.Column="1" Grid.Row="8" TextAlignment="Center" FontSize="20" VerticalAlignment="Bottom"/>
-        <TextBox Grid.Row="7" Grid.Column="1" VerticalAlignment="top" Height="45"/>
+        <TextBox x:Name="PassBox2" Grid.Row="9" Grid.Column="1" VerticalAlignment="top" Height="45"/>
         <Image Source="/Image/free-icon-lock-8472244.png" Grid.Row="9" HorizontalAlignment="Right"/>
         <Image Source="/Image/pngwing.com (3).png" Grid.Row="7" Grid.Column="3" HorizontalAlignment="Left" />
-        <Button Content="Зарегестрироваться" FontSize="40" Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" Width="400" Background="Ivory"/>
+        <Button Content="Зарегестрированны? Войдите" FontSize="15" Grid.Column="1" Grid.Row="10" Background="Bisque" Click="Button_Click"/>
+        <Button Content="Зарегестрироваться" FontSize="40" Grid.Column="1" Grid.Row="11" VerticalAlignment="Center" Width="400" Background="Ivory" Click="RegBtn_Click"/>
     </Grid>
 </Window>

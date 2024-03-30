@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,35 @@ namespace WpfApp1
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var login = LoginBox.Text;
+
+            var pass = PassBox.Text;
+
+            var email = MailBox.Text;
+            
+            var context = new AppDbContext();
+
+            var user_exists = context.Users.FirstOrDefault(x => x.Login == login);
+            if (user_exists is not null)
+            {
+                MessageBox.Show("Такой пользователь уже зарегестрирован");
+                return;
+            }    
+            var user = new User { Login = login, Password = pass, Email = email };
+            context.Users.Add(user);
+            context.SaveChanges();
+            MessageBox.Show("Вы успешно зарегестрировались");
         }
     }
 }
