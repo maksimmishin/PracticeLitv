@@ -41,10 +41,13 @@ namespace WpfApp1
         {
             var login = LoginBox.Text;
             var password = PassBox.Text;
+            var Email = LoginBox.Text;
             var context = new AppDbContext();
-            var user = context.Users.SingleOrDefault(x => x.Login == login && x.Password == password);
+            var user = context.Users.SingleOrDefault(x => x.Login == login || x.Email == login && x.Password == password);
             if (user is null)
             {
+                PassBox.BorderBrush = new SolidColorBrush(Colors.Red);
+                LoginBox.BorderBrush = new SolidColorBrush(Colors.Red);
                 MessageBox.Show("Неправильный логин или пароль!");
                 return;
             }
